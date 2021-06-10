@@ -1,0 +1,6 @@
+{
+    "invokerPackage": "com.xx.service",
+    "modelPackage": "com.xx.service.data.entity", 
+    "apiPackage": "com.xx.service.data.api",    
+    "artifactId": "app-0610-java-2"
+}

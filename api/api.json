@@ -1,0 +1,113 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "api/auth.proto",
+      "version": "version not set"
+    },
+    "tags": [
+      {
+        "name": "HelloWorldService"
+      }
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/HelloWorld": {
+        "post": {
+          "summary": "HelloWorld Stub",
+          "operationId": "HelloWorldService_HelloWorld",
+          "responses": {
+            "200": {
+              "description": "A successful response.",
+              "schema": {
+                "$ref": "#/definitions/apiHelloWorldResponse"
+              }
+            },
+            "default": {
+              "description": "An unexpected error response.",
+              "schema": {
+                "$ref": "#/definitions/rpcStatus"
+              }
+            }
+          },
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/apiHelloWorldRequest"
+              }
+            }
+          ],
+          "tags": [
+            "HelloWorldService"
+          ]
+        }
+      }
+    },
+    "definitions": {
+      "apiHelloWorldRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "t1": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "t2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "description": "Request message for HelloWorldService.HelloWorld."
+      },
+      "apiHelloWorldResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "description": "Response message for HelloWorldService.HelloWorld."
+      },
+      "protobufAny": {
+        "type": "object",
+        "properties": {
+          "type_url": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "rpcStatus": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/protobufAny"
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
